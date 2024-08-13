@@ -1,0 +1,37 @@
+version: '3.8'
+
+networks:
+  my-microservice-network:
+    external: true
+
+volumes:
+  logs_volume:
+    external: true
+
+services:
+  eureka:
+    image: service-registry:latest
+    networks:
+      - my-microservice-network
+    volumes:
+      - logs_volume:/app/logs
+    ports:
+      - "9070:9070"
+
+  config-server:
+    image: config-server:latest
+    networks:
+      - my-microservice-network
+    volumes:
+      - logs_volume:/app/logs
+    ports:
+      - "8081:8081"
+
+  gateway:
+    image: gateway:latest
+    networks:
+      - my-microservice-network
+    volumes:
+      - logs_volume:/app/logs
+    ports:
+      - "9071:9071"
