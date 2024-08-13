@@ -1,0 +1,12 @@
+[submodule "gateway"]
+	path = gateway
+	url = https://github.com/maruf03/gateway.git
+[submodule "service-registry"]
+	path = service-registry
+	url = https://github.com/maruf03/service-registry.git
+[submodule "config-server"]
+	path = config-server
+	url = https://github.com/maruf03/config-server.git
+[submodule "demo-service"]
+	path = demo-service
+	url = https://github.com/maruf03/demo-service.git
