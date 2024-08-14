@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  eureka:
+    image: service-registry:latest
+    ports:
+      - "9070:9070"
+
+  config-server:
+    image: config-server:latest
+    ports:
+      - "8081:8081"
+
+  gateway:
+    image: gateway:latest
+    restart: always
+    ports:
+      - "9071:9071"
+
+  demo-service:
+    image: demo-service:latest
+    restart: always
+    ports:
+      - "9007:9007"
